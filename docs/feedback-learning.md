@@ -20,6 +20,12 @@
 5. Apply accepted changes to shared source/templates and any deterministic authoring code that could overwrite them. Rebuild both editions and affected masters. Run relevant mathematical/code checks and inspect the affected compiled pages. Add an event with changed artifact locations, verification results, and a disposition of `applied`, `blocked`, `needs_clarification`, or `declined` (with reason). Do not label an unverified edit as applied.
 6. At the end of the batch, give a short summary of applied/outstanding edits and new or changed reusable preferences. The user should not have to write the ledger or maintain the register.
 
+## Token-efficient revisions
+
+Start from the last verified editable sources and the feedback delta. Patch only affected fragments; reuse unchanged transcriptions, assets, coverage ledgers and verified content. Read relevant source ranges rather than reloading entire transcripts. Recompile dependent PDFs for pagination and contents without sending unchanged prose through model generation again.
+
+Reuse a compiled artifact only when its relevant inputs and checks are still valid. A newly discovered rendering defect can require recompilation even when its content is unchanged; record that exception instead of claiming the artifact was reusable. Inspect changed pages and affected layout boundaries, retain cheap global integrity checks, and record changed versus reused sections. Do not invent token-savings percentages or describe this procedure as an automatic dependency cache.
+
 ## Preference register contract
 
 The JSON root has `version: 1` and a `rules` list. Each rule has:
@@ -32,7 +38,7 @@ The JSON root has `version: 1` and a `rules` list. Each rule has:
 - `feedback_ids`: the original suggestions that support it;
 - optional origin, rationale, exceptions, replacement links and verification notes.
 
-Existing standing style rules are seeded with an explicit baseline origin, not fabricated user feedback. The review-format and persistence requests are saved as the original human sentences. No page-level content corrections have yet been submitted to this history.
+Existing standing style rules are seeded with an explicit baseline origin, not fabricated user feedback. The private history preserves original requests and their dispositions; page-level corrections remain distinct from reusable presentation rules.
 
 ## How future generation uses the register
 

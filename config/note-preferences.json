@@ -41,8 +41,8 @@
       "status": "active",
       "scope": "all",
       "stages": ["draft", "outline", "review"],
-      "instruction": "Write the clean edition as direct study notes, not commentary about the evidence collection. Keep transcript/delivery comparisons, source-identification remarks, unavailable-source disclaimers and nonessential uncertainty audits in full-edition provenance or review metadata, not visible study prose. Preserve mathematical assumptions, consequential ambiguity, safety qualifications and the distinction between supplied official and independently worked answers in both editions. Retain structured source IDs and citations for auditing; never erase evidence or silently resolve a substantive conflict. For LaTeX body fragments, mark optional source commentary with \\sourceinfo{...} so the clean renderer can remove it explicitly.",
-      "feedback_ids": ["week-1-human-feedback-3", "week-1-human-feedback-4", "week-1-human-feedback-7", "week-1-human-feedback-8", "week-1-human-feedback-9"]
+      "instruction": "Write the clean edition as direct study notes, not commentary about the evidence collection. Keep transcript/delivery comparisons, source-identification remarks, unavailable-source disclaimers and nonessential uncertainty audits in full-edition provenance or review metadata, not visible study prose. Preserve mathematical assumptions, consequential ambiguity, safety qualifications and the distinction between supplied official and independently worked answers in both editions. Retain structured source IDs and citations for auditing; never erase evidence or silently resolve a substantive conflict. For LaTeX body fragments, mark optional source commentary with \\sourceinfo{...} so the clean renderer can remove it explicitly. State necessary limitations directly instead of prefacing them with meta-language such as this is not a claim or the source says; preserve the substantive qualification.",
+      "feedback_ids": ["week-1-human-feedback-3", "week-1-human-feedback-4", "week-1-human-feedback-7", "week-1-human-feedback-8", "week-1-human-feedback-9", "week-2-human-feedback-1"]
     },
     {
       "id": "principle-over-incidental-illustration",
@@ -75,6 +75,30 @@
       "stages": ["draft", "outline", "review"],
       "instruction": "Keep each complete practice question immediately followed by its corresponding worked answer before moving to the next question. Do not put all worked answers in an earlier section and the reconstructed questions in a distant appendix. Keep multi-page questions and all their subparts together before the answer. Preserve original question/code wording and clearly label supplied official solutions versus independently worked answers; do not invent an answer for introductory pages that contain no question.",
       "feedback_ids": ["week-1-human-feedback-10"]
+    },
+    {
+      "id": "preserve-complete-mathematical-notation",
+      "status": "active", "scope": "all", "stages": ["draft", "outline", "review"],
+      "instruction": "Preserve complete mathematical statements from the supplied materials, including domains/codomains, optimisation restrictions beneath min/max, conditioning events, indices, bounds, function classes and parameter spaces. Define functions and symbols at their point of use. Add equivalent forms and explanations, but do not replace a complete expression with an abridged one. Flag genuine source errors separately rather than silently treating them as correct or deleting notation.",
+      "feedback_ids": ["week-2-human-feedback-2", "week-2-human-feedback-4", "week-2-human-feedback-5"]
+    },
+    {
+      "id": "plain-language-proof-recaps",
+      "status": "active", "scope": "all", "stages": ["draft", "outline", "review"],
+      "instruction": "End complex proofs and derivations with a short plain-language recap: what was shown, why the key step works and what the result means. The recap supplements rather than replaces formal steps and assumptions.",
+      "feedback_ids": ["week-2-human-feedback-7"]
+    },
+    {
+      "id": "explain-brief-advanced-concepts",
+      "status": "active", "scope": "all", "stages": ["draft", "outline", "review"],
+      "instruction": "When a lecturer briefly mentions a difficult concept needed for understanding, add a clear definition, intuition and a small example or derivation. Identify supplementary explanations as such, retain their assumptions, and do not present them as supplied official solutions or additional lecture content.",
+      "feedback_ids": ["week-2-human-feedback-8"]
+    },
+    {
+      "id": "law-of-iterated-expectations-name",
+      "status": "active", "scope": "all", "stages": ["draft", "outline", "review"],
+      "instruction": "Use the name Law of Iterated Expectations consistently in explanatory prose, headings and proof annotations instead of tower property. Preserve wording inside verbatim source reproductions and keep conditioning information sets explicit.",
+      "feedback_ids": ["week-2-human-feedback-6"]
     }
   ]
 }

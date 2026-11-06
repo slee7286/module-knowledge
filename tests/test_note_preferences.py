@@ -141,7 +141,9 @@ def test_reviewed_style_rules_are_loaded_for_future_generation(monkeypatch):
     monkeypatch.delenv("MODULE_KNOWLEDGE_PREFERENCES", raising=False)
     expected = {"study-first-clean-edition", "principle-over-incidental-illustration",
                 "figures-before-dependent-explanation", "explicit-example-classifications",
-                "question-then-worked-answer"}
+                "question-then-worked-answer", "preserve-complete-mathematical-notation",
+                "plain-language-proof-recaps", "explain-brief-advanced-concepts",
+                "law-of-iterated-expectations-name"}
     for stage in ("draft", "outline", "review"):
         selected = preference_context(stage, module="Machine Learning")
         indexed = {rule["id"]: rule for rule in selected["rules"]}
