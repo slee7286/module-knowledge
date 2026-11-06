@@ -1,0 +1,35 @@
+{
+  "module": "Accounting",
+  "academic_year": "2025-2026",
+  "format": "docx",
+  "slices": {
+    "development": {
+      "label": "Lecture 2 + Tutorial 2",
+      "sources": [
+        {"path": "Lecture 2/02a Budgeting Handout.pdf", "role": "lecture_handout"},
+        {"path": "Lecture 2/02b Budgeting Lecture 2025.pptx", "role": "lecture_slides"},
+        {"path": "Lecture 2/02c Budgeting Question.docx", "role": "tutorial_question"},
+        {"path": "Lecture 2/02e Alberta Cash Budget.docx", "role": "tutorial_question"},
+        {"path": "Lecture 2/02g MCQ Production Budgets.pdf", "role": "tutorial_question"},
+        {"path": "Lecture 2/02h Q AND A Production Budgets.pdf", "role": "tutorial_solution"},
+        {"path": "Lecture 2/02i MCQ Cash Budgeting.pdf", "role": "tutorial_question"},
+        {"path": "Lecture 2/02j Q AND A Cash Budgeting.pdf", "role": "tutorial_solution"},
+        {"path": "Tutorial Slides/Tutorial slides - Week 2.pdf", "role": "tutorial_solution"}
+      ],
+      "excluded": ["02ci and 02ei blank answer templates", "duplicate PPTX of 02a handout"]
+    },
+    "locked_test": {
+      "label": "Lecture 1 + Tutorial 1",
+      "sources": [
+        {"path": "Lecture 1/01a Intro to Man Acc and CVP Handout EFDS 2026.pdf", "role": "lecture_handout"},
+        {"path": "Lecture 1/01b Intro to Man Acc and CVP Lecture EFDS.pptx", "role": "lecture_slides"},
+        {"path": "Lecture 1/01c MCQ Intro to Man Acc and Cost Concepts.pdf", "role": "tutorial_question"},
+        {"path": "Lecture 1/01d MCQ AND A Intro to Man Acc and Cost Concepts.pdf", "role": "tutorial_solution"},
+        {"path": "Lecture 1/01e MCQ Cost Volume Profit Analysis.pdf", "role": "tutorial_question"},
+        {"path": "Lecture 1/01f MCQ AND A Cost Volume Profit Analysis.pdf", "role": "tutorial_solution"},
+        {"path": "Lecture 1/01g CVP Healthcare Question.pdf", "role": "tutorial_question"},
+        {"path": "Tutorial Slides/Tutorial slides - week 1.pdf", "role": "tutorial_solution"}
+      ]
+    }
+  }
+}
