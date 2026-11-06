@@ -219,3 +219,32 @@ def test_template_separates_front_matter_and_note_page_numbering(tmp_path):
     assert tex.index(r"\pagenumbering{Roman}") < tex.index(r"\begin{titlepage}")
     assert tex.index(r"\pagenumbering{roman}") > tex.index(r"\end{titlepage}")
     assert tex.index(r"\pagenumbering{arabic}") > tex.index(r"\tableofcontents")
+
+
+def test_typed_source_commentary_is_full_only_in_components_and_masters(tmp_path):
+    from module_knowledge.latex import combine_latex_notes
+
+    body = tmp_path / "body.tex"
+    body.write_text(
+        r"\subsection{Concept}" + "\n"
+        + r"A useful explanation with a correctness condition: assume full rank. "
+        + r"\sourceinfo{A delivery comparison with \textbf{nested braces} and $x_{i}$.} "
+        + r"Read \texttt{source/data.csv} as the example input.",
+        encoding="utf-8",
+    )
+    draft = {"module": "Example", "lectures": [{"number": 1, "title": "Concept",
+             "date": "Unconfirmed", "body_file": "body.tex"}]}
+    full = tmp_path / "full.tex"
+    clean = tmp_path / "clean.tex"
+    render_latex(draft, full, source_root=tmp_path, include_sources=True)
+    render_latex(draft, clean, source_root=tmp_path, include_sources=False)
+    combine_latex_notes([full], tmp_path / "master.tex", module="Example",
+                        academic_year="2026", include_sources=False)
+    assert r"\newcommand{\sourceinfo}" in full.read_text()
+    assert "A delivery comparison" in full.read_text()
+    for path in (clean, tmp_path / "master.tex"):
+        content = path.read_text().split(r"\pagenumbering{arabic}", 1)[1]
+        assert "A delivery comparison" not in content
+        assert r"\sourceinfo" not in content
+        assert "assume full rank" in content
+        assert r"source/data.csv" in content

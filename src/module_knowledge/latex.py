@@ -231,7 +231,8 @@ def _strip_source_citations(text: str) -> str:
 
 
 def _strip_review_flags(text: str) -> str:
-    return _strip_tex_macro(text, "reviewflag", 1)
+    text = _strip_tex_macro(text, "reviewflag", 1)
+    return _strip_tex_macro(text, "sourceinfo", 1)
 
 
 def _strip_literal_source_path_lines(text: str) -> str:
@@ -533,6 +534,29 @@ def render_latex(
         "skipped": len(skipped),
         "input_files": len(inputs) + len(assets),
     }
+
+
+def assemble_practice_pairs(pairs: list[dict]) -> str:
+    """Keep each complete native question immediately before its labelled answer."""
+    parts = []
+    identities = set()
+    for pair in pairs:
+        if not isinstance(pair, dict) or any(
+            not isinstance(pair.get(key), str) or not pair[key].strip()
+            for key in ("id", "question", "answer", "answer_label")
+        ):
+            raise ValueError("Every practice pair needs an id, question, answer and explicit answer label")
+        if pair["id"] in identities:
+            raise ValueError(f"Duplicate practice pair identity: {pair['id']}")
+        identities.add(pair["id"])
+        parts.extend([
+            r"\clearpage",
+            pair["question"],
+            r"\par\medskip",
+            r"\paragraph{" + _escape_tex(pair["answer_label"]) + "}",
+            pair["answer"],
+        ])
+    return "\n".join(parts) + "\n"
 
 
 def combine_latex_notes(
