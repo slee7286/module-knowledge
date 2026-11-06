@@ -1,0 +1,25 @@
+{
+  "sources": {
+    "source/lectures/REPLACE_WITH_EXACT_WEEK_1_EVENT_FOLDER": {
+      "weeks": [1]
+    },
+    "source/tutorials/REPLACE_WITH_EXACT_WEEK_1_EVENT_FOLDER": {
+      "weeks": [1]
+    },
+    "source/lecture-slides/Week 2": {
+      "weeks": [2]
+    },
+    "source/lecture-transcripts/Week 2": {
+      "weeks": [2]
+    },
+    "source/mock-tests/REPLACE_WITH_EXACT_PAPER_FILENAME.pdf": {
+      "weeks": [1, 2, 3, 4, 5]
+    },
+    "source/mock-test-solutions/REPLACE_WITH_EXACT_SOLUTIONS_FILENAME.pdf": {
+      "weeks": [1, 2, 3, 4, 5]
+    },
+    "source/midterm-study-guides/REPLACE_WITH_EXACT_GUIDE_FILENAME.pdf": {
+      "weeks": [1, 2, 3, 4, 5]
+    }
+  }
+}
