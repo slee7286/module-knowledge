@@ -1,0 +1,36 @@
+# Course materials, extracts, caches, and generated outputs stay outside this project.
+.env
+.env.*
+.venv/
+/data/
+/sources/
+/outputs/
+/runs/
+/cache/
+*.sqlite
+*.sqlite-*
+__pycache__/
+.pytest_cache/
+*.egg-info/
+/dist/
+/build/
+
+# Private local course inventories and material must never be published.
+/docs/onedrive-y1-assessment.md
+/Human Suggested Changes.txt
+/source/
+/generated/
+/snapshots/
+/extracted/
+/private/
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.mp3
+*.mp4
+*.wav
+*.m4a
+*.mov
+*.pem
+*.key
