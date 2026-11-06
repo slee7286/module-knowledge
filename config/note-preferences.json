@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "feedback_history": "/home/siheon/projects/OneDrive/note-feedback/edits.json",
+  "rules": [
+    {
+      "id": "complete-but-concise",
+      "status": "active",
+      "scope": "all",
+      "stages": ["draft", "outline"],
+      "instruction": "Compress phrasing and consolidate repetition, not useful information. Retain definitions, assumptions, derivations, examples, exceptions and useful figures; do not turn complete notes into a short synopsis.",
+      "feedback_ids": [],
+      "origin": "Existing standing note-style contract in software-development/module-knowledge-note-style; not inferred from a new page correction."
+    },
+    {
+      "id": "topic-and-nested-bullets",
+      "status": "active",
+      "scope": "all",
+      "stages": ["outline"],
+      "instruction": "Use specific topic subheadings and concise nested bullets: place definitions, assumptions, reasoning and examples beneath the relevant parent concept, rather than one flat list.",
+      "feedback_ids": [],
+      "origin": "Existing standing note-style contract in software-development/module-knowledge-note-style."
+    },
+    {
+      "id": "three-field-review",
+      "status": "active",
+      "scope": "all",
+      "stages": ["review"],
+      "instruction": "Accept only File, Page and Suggested change in ordinary human sentences. Treat physical PDF pages as the default and allow Page: all. Locate the source yourself; do not require quotes, headings, citations, reasons or technical replacement wording.",
+      "feedback_ids": ["simple-review-format"]
+    },
+    {
+      "id": "persistent-feedback-learning",
+      "status": "active",
+      "scope": "all",
+      "stages": ["review"],
+      "instruction": "Preserve each original suggestion and its disposition in the durable edit history. Distinguish one-off content corrections from reusable presentation preferences. Promote explicit general preferences into this register; keep uncertain inferred patterns as candidates. Reuse active preferences in future notes and preserve superseded rules and their reasons.",
+      "feedback_ids": ["durable-preference-learning"]
+    }
+  ]
+}
