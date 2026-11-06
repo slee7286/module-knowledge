@@ -5,6 +5,27 @@ from module_knowledge.latex import _escape_tex
 from module_knowledge.render import render_latex
 
 
+def test_native_code_uses_unicode_fonts_without_legacy_encoding(tmp_path):
+    from module_knowledge.latex import combine_latex_notes
+
+    body = tmp_path / "body.tex"
+    code = 'print("I’m just code; I don’t understand.")'
+    body.write_text("\\begin{verbatim}\n" + code + "\n\\end{verbatim}\n")
+    draft = {"module": "Example", "lectures": [{"number": 1, "title": "Code",
+             "date": "Unconfirmed", "body_file": "body.tex"}]}
+    component = tmp_path / "component.tex"
+    master = tmp_path / "master.tex"
+    render_latex(draft, component, source_root=tmp_path)
+    combine_latex_notes([component], master, module="Example", academic_year="2026")
+    for path in (component, master):
+        content = path.read_text()
+        assert r"\usepackage{fontspec}" in content
+        assert r"\usepackage{upquote}" in content
+        assert r"\usepackage[T1]{fontenc}" not in content
+        assert r"\usepackage{lmodern}" not in content
+        assert code in content
+
+
 def test_render_latex_builds_toc_dated_lecture_and_provenance_sidecar(tmp_path):
     body = tmp_path / "lecture-1.tex"
     body.write_text(r"\subsection{Linear model}" + "\n" + r"\[y_i=\beta x_i+\epsilon_i\]" + "\n", encoding="utf-8")
