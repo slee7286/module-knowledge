@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "default_format": "latex",
+  "template": "module-notes",
+  "modules": [
+    {"name": "Econometrics 1", "format": "latex"},
+    {"name": "Machine Learning", "format": "latex"},
+    {"name": "Microeconomics 2", "format": "latex"},
+    {"name": "Corporate Finance and Capital Markets", "format": "latex"}
+  ],
+  "note_structure": {
+    "contents": true,
+    "lecture_heading_requires": ["number", "title", "date"],
+    "citation_locators": ["pdf_page", "slide", "transcript_line", "audio_timestamp"],
+    "preferred_blocks": ["definition", "equation", "derivation", "worked_example", "figure", "table", "bullet_list"]
+  }
+}

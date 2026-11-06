@@ -1,0 +1,46 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[british]{babel}
+\usepackage[margin=24mm,headheight=14pt]{geometry}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{booktabs,longtable,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\setlist[itemize]{leftmargin=*,itemsep=2pt,topsep=3pt,parsep=0pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=3pt,parsep=0pt}
+\setcounter{tocdepth}{2}
+\setlength{\emergencystretch}{2em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small %%MODULE%%}
+\fancyhead[R]{\small Study notes}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\newcommand{\sourcecite}[2]{{\footnotesize\textcolor{gray}{[#1, #2]}}}
+\newcommand{\reviewflag}[1]{\textcolor{red!70!black}{\textbf{[REVIEW: #1]}}}
+\begin{document}
+\pagenumbering{Roman}
+\begin{titlepage}
+  \centering
+  \vspace*{2cm}
+  {\LARGE\bfseries %%TITLE%%\par}
+  \vspace{0.6cm}
+  {\large %%MODULE%%\par}
+  \vspace{0.3cm}
+  {\large %%DATE%%\par}
+  \vfill
+  {\small %%EDITION%%\par}
+\end{titlepage}
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+%%BODY%%
+\end{document}
