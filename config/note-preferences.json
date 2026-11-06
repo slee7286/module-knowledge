@@ -35,6 +35,46 @@
       "stages": ["review"],
       "instruction": "Preserve each original suggestion and its disposition in the durable edit history. Distinguish one-off content corrections from reusable presentation preferences. Promote explicit general preferences into this register; keep uncertain inferred patterns as candidates. Reuse active preferences in future notes and preserve superseded rules and their reasons.",
       "feedback_ids": ["durable-preference-learning"]
+    },
+    {
+      "id": "study-first-clean-edition",
+      "status": "active",
+      "scope": "all",
+      "stages": ["draft", "outline", "review"],
+      "instruction": "Write the clean edition as direct study notes, not commentary about the evidence collection. Keep transcript/delivery comparisons, source-identification remarks, unavailable-source disclaimers and nonessential uncertainty audits in full-edition provenance or review metadata, not visible study prose. Preserve mathematical assumptions, consequential ambiguity, safety qualifications and the distinction between supplied official and independently worked answers in both editions. Retain structured source IDs and citations for auditing; never erase evidence or silently resolve a substantive conflict. For LaTeX body fragments, mark optional source commentary with \\sourceinfo{...} so the clean renderer can remove it explicitly.",
+      "feedback_ids": ["week-1-human-feedback-3", "week-1-human-feedback-4", "week-1-human-feedback-7", "week-1-human-feedback-8", "week-1-human-feedback-9"]
+    },
+    {
+      "id": "principle-over-incidental-illustration",
+      "status": "active",
+      "scope": "all",
+      "stages": ["draft", "outline", "review"],
+      "instruction": "For a rhetorical live visual, prompt demonstration or incidental news anecdote that adds no distinct examinable reasoning, state its teaching principle directly instead of narrating the demonstration or reproducing decorative imagery. Retain examples that are needed to understand a concept, equation, method or application; brevity is not permission to omit useful course content.",
+      "feedback_ids": ["week-1-human-feedback-1"]
+    },
+    {
+      "id": "figures-before-dependent-explanation",
+      "status": "active",
+      "scope": "all",
+      "stages": ["draft", "outline", "review"],
+      "instruction": "When an explanation depends on seeing an original image, diagram or plot, place that figure immediately above its first dependent explanation, keeping the figure and explanation together where practical. Do not describe an unseen visual first and put the image on a later page. Keep original figure attribution separate from unnecessary source narration.",
+      "feedback_ids": ["week-1-human-feedback-5"]
+    },
+    {
+      "id": "explicit-example-classifications",
+      "status": "active",
+      "scope": "all",
+      "stages": ["draft", "outline", "review"],
+      "instruction": "When examples teach a contrast or classification, state the relevant category explicitly for each example rather than making the reader infer it from the story. In explicit-programming examples, label each as explicitly programmed or not explicitly programmed in the stated sense and give the brief reason. Do not apply software classifications literally to human analogies outside that teaching context.",
+      "feedback_ids": ["week-1-human-feedback-2"]
+    },
+    {
+      "id": "question-then-worked-answer",
+      "status": "active",
+      "scope": "all",
+      "stages": ["draft", "outline", "review"],
+      "instruction": "Keep each complete practice question immediately followed by its corresponding worked answer before moving to the next question. Do not put all worked answers in an earlier section and the reconstructed questions in a distant appendix. Keep multi-page questions and all their subparts together before the answer. Preserve original question/code wording and clearly label supplied official solutions versus independently worked answers; do not invent an answer for introductory pages that contain no question.",
+      "feedback_ids": ["week-1-human-feedback-10"]
     }
   ]
 }

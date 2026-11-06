@@ -7,7 +7,10 @@ This complements the automated CLI workflow. It documents the reusable acceptanc
 - Read the preference register and private feedback history before drafting. Keep raw feedback and source excerpts outside the repository.
 - Inventory exact module/week scope, freeze the selected sources and record input accounting. A problem-set number is not necessarily a teaching week. Treat folder dates as provisional unless corroborated by an authoritative schedule.
 - Read both complete lecture transcripts when provided. Consolidate repetition, retaining unique explanations, examples, derivations, qualifications and disagreements.
-- Preserve full questions and all subparts. Keep supplied written solutions, spoken lecturer answers and independently derived practice answers visibly distinct. Missing official solutions remain source gaps even when a practice answer is verified.
+- Preserve full questions and all subparts. Put each complete question immediately before its worked answer, then move to the next question; keep multi-page questions together. Keep supplied written solutions, spoken lecturer answers and independently derived practice answers visibly distinct. Missing official solutions remain source gaps even when a practice answer is verified.
+- For native LaTeX practice blocks, `module_knowledge.latex.assemble_practice_pairs` preserves the question and answer strings, requires explicit answer labels, and rejects incomplete or duplicate pairs. Keep an explicit source-page-to-answer ledger and verify all pairings in the final PDF; rendering alone cannot establish that an answer belongs to its question.
+- Keep clean-edition prose study-focused. Mark optional source comparisons, delivery attribution and nonessential source limitations with `\sourceinfo{...}`; clean rendering removes that typed commentary while full rendering retains it. Do not hide consequential mathematical assumptions, genuine ambiguity or answer authority.
+- Extract the teaching principle from incidental rhetorical visuals; keep useful conceptual examples and label their relevant categories explicitly. Place a necessary original figure above its dependent explanation.
 - Use a contents page, dated lecture/tutorial headings, topic subheadings and nested bullets. Concise phrasing must not reduce useful coverage.
 
 ## Native LaTeX instead of screenshots

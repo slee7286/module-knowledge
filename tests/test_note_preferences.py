@@ -135,3 +135,17 @@ def test_explicit_missing_register_does_not_silently_forget_preferences(tmp_path
     monkeypatch.setenv("MODULE_KNOWLEDGE_PREFERENCES", str(tmp_path / "missing.json"))
     with pytest.raises(FileNotFoundError):
         preference_context("draft")
+
+
+def test_reviewed_style_rules_are_loaded_for_future_generation(monkeypatch):
+    monkeypatch.delenv("MODULE_KNOWLEDGE_PREFERENCES", raising=False)
+    expected = {"study-first-clean-edition", "principle-over-incidental-illustration",
+                "figures-before-dependent-explanation", "explicit-example-classifications",
+                "question-then-worked-answer"}
+    for stage in ("draft", "outline", "review"):
+        selected = preference_context(stage, module="Machine Learning")
+        indexed = {rule["id"]: rule for rule in selected["rules"]}
+        assert expected <= indexed.keys()
+        for id in expected:
+            assert indexed[id]["instruction"] in selected["prompt_suffix"]
+            assert indexed[id]["feedback_ids"]
